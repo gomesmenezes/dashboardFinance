@@ -13,7 +13,7 @@ const chartData = reactive({
     datasets: [
         {
             data: investValue,
-            backgroundColor: ['#98FB98', '#FF8C00', '#800000'],
+            backgroundColor: ['#98FB98', '#FF8C00', '#FF3131'],
         }
     ]
 });
@@ -54,7 +54,7 @@ const chartOptions = reactive({
             <div class="w-full">
                 <div class="navbarDashboard flex justify-between items-center w-full p-10">
                     <div class="welcome w-full">
-                        <h1 class="text-3xl font-bold text-white">Seja Bem vindo, patrão!</h1>
+                        <h1 class="text-3xl font-bold text-white">Seja Bem vindo, ${nameUser}</h1>
                     </div>
                     <div>
                         <nav>
@@ -76,6 +76,10 @@ const chartOptions = reactive({
 </template>
 
 <style>
+body {
+    background-color: #151530 !important;
+}
+
 .p-chip {
     background-color: #6359E9 !important;
     color: white !important;
