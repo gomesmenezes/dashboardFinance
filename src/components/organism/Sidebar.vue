@@ -4,9 +4,12 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 let sidebar: any;
+let logout: any;
 
 const initialWitdhDashboard = () => {
     sidebar = document.getElementById('sidebar');
+    logout = document.getElementById('logout');
+    logout?.classList.add('w-[130px]');
     sidebar?.classList.add('w-[180px]');
 }
 
@@ -16,6 +19,7 @@ onMounted(() => {
         initialWitdhDashboard();
         setTimeout(() => {
             sidebar?.classList.remove('w-[180px]');
+            logout?.classList.remove('w-[130px]');
         }, 1500);
     }, 0);
 
@@ -25,7 +29,7 @@ onMounted(() => {
 
 <template>
     <aside id="sidebar"
-        class="mt-5 mb-5 pt-5 pb-5 ml-3 w-[60px] h-[95vh] bg-[#27264E] overflow-hidden transit rounded-lg text-white flex flex-col justify-between items-start transition-all backgroud duration-700 ease-in-out  hover:w-[175px]">
+        class="group mt-5 mb-5 pt-5 pb-5 ml-3 w-[60px] h-[95vh] bg-[#27264E] overflow-hidden rounded-lg text-white flex flex-col justify-between items-start transition-all backgroud duration-700 ease-in-out  hover:w-[180px]">
         <div class="max-w-[220px] w-full mx-auto">
             <nav>
                 <ul class="flex flex-col pl-2 gap-2 items-start ">
@@ -47,10 +51,10 @@ onMounted(() => {
             </nav>
         </div>
 
-        <div class=" mx-auto">
+        <div class="flex ml-2 justify-items-start items-start">
             <NuxtLink to="/">
-                <button
-                    class="w-[40px] h-[40px] flex rounded-lg justify-center items-center bg-neutral-700 hover:bg-neutral-600 hover:cursor-pointer">
+                <button id="logout"
+                    class="w-[40px] h-[40px] flex rounded-lg justify-center items-center bg-neutral-700 group-hover:w-[130px] transition-all backgroud duration-700 ease-in-out hover:bg-neutral-600 hover:cursor-pointer">
                     <LogOut />
                 </button>
             </NuxtLink>

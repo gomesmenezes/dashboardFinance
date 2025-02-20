@@ -7,7 +7,7 @@ const totalValue = investValue.reduce((acc, val) => acc + val, 0);
 
 <template>
     <div
-        class="container max-w-[400px] w-[400px] max-h-[100px] h-[100px] ml-10 bg-[#1D1D41] rounded-[20px] py-4 px-7 flex items-center justify-between">
+        class="max-w-[400px] w-[400px] max-h-[100px] h-[100px] ml-10 bg-[#1D1D41] rounded-[20px] py-4 px-7 flex items-center justify-between">
         <div class="content h-[54px] gap-4 flex">
             <div class="icon flex items-center">
                 <div class="container-icon bg-[#827be6] h-[45px] w-[45px] flex items-center justify-center rounded-lg">
